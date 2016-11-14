@@ -1,0 +1,24 @@
+---
+
+- resource_head:
+    name: openstack
+    depends_on:
+        - glance
+
+- resource:
+    name: mariadb
+    file: mariadb.yaml
+
+- resource:
+    name: keystone
+    file: keystone.yaml
+    depends_on:
+        - mariadb
+
+- resource:
+    name: glance
+    file: glance.yaml
+    depends_on:
+        - mariadb
+        - keystone
+

@@ -1,0 +1,8 @@
+---
+
+- resource_head:
+    name: mariadb
+    depends_on:
+        - mariadb_bootstrap
+        - mariadb_configmap
+        - mariadb_service
